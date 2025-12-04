@@ -1,6 +1,5 @@
-/* ================================
-   PORTFOLIO WEBSITE - JAVASCRIPT
-   ================================ */
+// Small JS file for my portfolio site
+// I keep each feature in its own function so it's easier for me to understand later.
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNavigation();
@@ -11,13 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initActiveNavHighlight();
   initNavbarShadow();
-  initProjectCardHover();
   setCurrentYear();
 });
 
-/* ================================
-   FEATURE 1: MOBILE NAVIGATION TOGGLE
-   ================================ */
+// handles the mobile menu (hamburger) on small screens
 function initMobileNavigation() {
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
@@ -25,13 +21,12 @@ function initMobileNavigation() {
 
   if (!navToggle || !navMenu) return;
 
-  // Toggle mobile menu when hamburger is clicked
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
   });
 
-  // Close mobile menu when a link is clicked
+  // when I click any nav link on mobile, I close the menu
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       navToggle.classList.remove('active');
@@ -39,31 +34,27 @@ function initMobileNavigation() {
     });
   });
 
-  // Close mobile menu when clicking outside
+  // close the menu if I click outside of it
   document.addEventListener('click', event => {
-    const isClickInsideNav =
+    const clickedInsideNav =
       navToggle.contains(event.target) || navMenu.contains(event.target);
 
-    if (!isClickInsideNav && navMenu.classList.contains('active')) {
+    if (!clickedInsideNav && navMenu.classList.contains('active')) {
       navToggle.classList.remove('active');
       navMenu.classList.remove('active');
     }
   });
 }
 
-/* ================================
-   FEATURE 2: SMOOTH SCROLLING
-   ================================ */
+// smooth scroll when I click the navbar links or hero buttons
 function initSmoothScrolling() {
   const navLinks = document.querySelectorAll('.nav-link');
   const heroButtons = document.querySelectorAll('.hero-buttons a');
-
   const allInternalLinks = [...navLinks, ...heroButtons];
 
   allInternalLinks.forEach(link => {
     link.addEventListener('click', e => {
       const href = link.getAttribute('href');
-
       if (!href || !href.startsWith('#')) return;
 
       e.preventDefault();
@@ -77,19 +68,21 @@ function initSmoothScrolling() {
       const navbarHeight = navbar.offsetHeight;
       const targetPosition = targetSection.offsetTop - navbarHeight;
 
+      // if the browser supports smooth scroll, just use it
       if ('scrollBehavior' in document.documentElement.style) {
         window.scrollTo({
           top: targetPosition,
           behavior: 'smooth',
         });
       } else {
-        // Fallback for older browsers
+        // fallback for older browsers
         smoothScrollFallback(targetPosition);
       }
     });
   });
 }
 
+// simple custom smooth scroll for older browsers
 function smoothScrollFallback(targetY) {
   const startY = window.pageYOffset;
   const distance = targetY - startY;
@@ -114,13 +107,12 @@ function smoothScrollFallback(targetY) {
   requestAnimationFrame(animation);
 }
 
-/* ================================
-   FEATURE 3: BACK TO TOP BUTTON
-   ================================ */
+// back-to-top button logic
 function initBackToTopButton() {
   const backToTopBtn = document.getElementById('backToTop');
   if (!backToTopBtn) return;
 
+  // I only show this button once you've scrolled down a bit
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
       backToTopBtn.classList.add('show');
@@ -138,16 +130,13 @@ function initBackToTopButton() {
   });
 }
 
-/* ================================
-   FEATURE 4: DARK/LIGHT THEME TOGGLE
-   (ICON-BASED: REMIX ICON)
-   ================================ */
+// dark / light theme toggle with localStorage
 function initThemeToggle() {
   const themeToggle = document.getElementById('themeToggle');
   const themeIcon = document.getElementById('themeIcon');
   if (!themeToggle || !themeIcon) return;
 
-  // Check saved preference or default to light
+  // check what theme I saved before (if any)
   const savedTheme = localStorage.getItem('theme') || 'light';
   const isDark = savedTheme === 'dark';
 
@@ -164,7 +153,7 @@ function initThemeToggle() {
   });
 
   function updateThemeIcon(theme) {
-    // Use Remix Icon classes: ri-moon-line / ri-sun-line
+    // swapping the icon between moon and sun
     if (theme === 'dark') {
       themeIcon.classList.remove('ri-moon-line');
       themeIcon.classList.add('ri-sun-line');
@@ -175,9 +164,7 @@ function initThemeToggle() {
   }
 }
 
-/* ================================
-   FEATURE 5 & 6: CONTACT FORM VALIDATION
-   ================================ */
+// basic front-end validation for the contact form
 function initContactForm() {
   const contactForm = document.getElementById('contactForm');
   if (!contactForm) return;
@@ -236,6 +223,7 @@ function initContactForm() {
     if (!successMessage) return;
     successMessage.classList.add('show');
 
+    // hide the success message automatically after a few seconds
     setTimeout(() => {
       successMessage.classList.remove('show');
     }, 5000);
@@ -243,7 +231,7 @@ function initContactForm() {
     successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-  // Real-time validation
+  // a bit of real-time feedback when the fields lose focus
   if (nameInput) {
     nameInput.addEventListener('blur', () => {
       if (!nameInput.value.trim()) {
@@ -278,9 +266,7 @@ function initContactForm() {
   }
 }
 
-/* ================================
-   FEATURE 7: SCROLL-BASED ANIMATIONS
-   ================================ */
+// simple scroll animation using IntersectionObserver
 function initScrollAnimations() {
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
   if (!animatedElements.length) return;
@@ -290,23 +276,19 @@ function initScrollAnimations() {
     rootMargin: '0px 0px -50px 0px',
   };
 
-  const observerCallback = (entries, observer) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('animated');
-        observer.unobserve(entry.target);
+        obs.unobserve(entry.target);
       }
     });
-  };
-
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  }, observerOptions);
 
   animatedElements.forEach(element => observer.observe(element));
 }
 
-/* ================================
-   FEATURE 8: ACTIVE NAVIGATION HIGHLIGHT
-   ================================ */
+// highlight the nav link that matches the section I'm currently on
 function initActiveNavHighlight() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -334,18 +316,14 @@ function initActiveNavHighlight() {
   });
 }
 
-/* ================================
-   FEATURE 9: DYNAMIC CURRENT YEAR
-   ================================ */
+// just sets the current year in the footer so I don't have to update it manually
 function setCurrentYear() {
   const yearElement = document.getElementById('currentYear');
   if (!yearElement) return;
   yearElement.textContent = new Date().getFullYear();
 }
 
-/* ================================
-   EXTRA: NAVBAR SHADOW ON SCROLL
-   ================================ */
+// add a bit more shadow to the navbar when the page is scrolled
 function initNavbarShadow() {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
@@ -358,25 +336,3 @@ function initNavbarShadow() {
     }
   });
 }
-
-/* ================================
-   EXTRA: PROJECT CARD HOVER ENHANCEMENT
-   ================================ */
-function initProjectCardHover() {
-  const projectCards = document.querySelectorAll('.project-card');
-  if (!projectCards.length) return;
-
-  projectCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transition = 'all 0.3s ease';
-    });
-  });
-}
-
-/* ================================
-   ERROR HANDLING
-   ================================ */
-window.addEventListener('error', e => {
-  console.error('JavaScript Error:', e.message);
-  // In production, send this to a monitoring service
-});
