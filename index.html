@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="description"
+        content="Junior Langie - Diploma in Computer Science student specializing in web development and design."
+    />
+    <title>Junior Langie | Web Developer Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    />
+
+    <!-- Icon Library (Remix Icon) -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="#home" class="nav-logo">Junior Langie</a>
+
+                <!-- Theme Toggle -->
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                >
+                    <i class="ri-moon-line" id="themeIcon"></i>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button
+                    class="nav-toggle"
+                    id="navToggle"
+                    aria-label="Toggle navigation menu"
+                >
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+    <div class="container hero-container">
+
+        <div class="hero-wrapper animate-on-scroll">
+            
+            <!-- Left: Text Content -->
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Junior</span>
+                </h1>
+                <p class="hero-subtitle">Diploma in Computer Science Student</p>
+
+                <p class="hero-tagline">
+                    Helping brands stand out through meaningful web design.
+                </p>
+
+                <p class="hero-description">
+                    I create clean, functional, and user-friendly websites that help 
+                    businesses present their services professionally. I’m passionate 
+                    about building practical web solutions from concept to deployment.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+
+            <!-- Right: Profile Image -->
+            <div class="hero-image">
+                <img src="profile.jpg" alt="Junior Langie Profile" />
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">About Me</h2>
+                <div class="about-content animate-on-scroll">
+                    <div class="about-text">
+                        <p>
+                            I am a Diploma in Computer Science student with a
+                            passion for web development, focusing on corporate,
+                            business, and product-based websites. I enjoy
+                            creating clean, functional interfaces that help
+                            clients present their services in a professional and
+                            engaging way.
+                        </p>
+                        <p>
+                            Through real client projects for law firms,
+                            e-commerce brands, and service providers, I have
+                            strengthened my ability to translate client needs
+                            into effective digital solutions. I’m comfortable
+                            working from the early planning stage up to final
+                            deployment.
+                        </p>
+                        <p>
+                            My goal is to grow as a front-end developer who
+                            builds websites that look good and also serve clear
+                            business purposes. I believe in continuous learning
+                            and staying updated with tools and technologies to
+                            deliver better results.
+                        </p>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="skills-container">
+                        <div class="skills-category">
+                            <h3>Technical Skills</h3>
+                            <ul class="skills-list">
+                                <li>WordPress CMS & Plugin Configuration</li>
+                                <li>Elementor Page Builder</li>
+                                <li>
+                                    JetEngine (Custom Post Types & Dynamic
+                                    Content)
+                                </li>
+                                <li>HTML &amp; CSS</li>
+                                <li>JavaScript (Interactivity & Features)</li>
+                                <li>UI Design (Canva &amp; Figma)</li>
+                                <li>Website Deployment &amp; Hosting</li>
+                                <li>Basic SEO Optimization</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h3>Soft Skills</h3>
+                            <ul class="skills-list">
+                                <li>
+                                    Client Communication &amp; Requirement
+                                    Gathering
+                                </li>
+                                <li>Team Collaboration</li>
+                                <li>Time Management &amp; Planning</li>
+                                <li>Technical Problem Solving</li>
+                                <li>Adaptability &amp; Quick Learning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">My Projects</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    A selection of real client work and web development projects
+                </p>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Arip Ameran Law Firm -->
+                    <article class="project-card animate-on-scroll">
+                        <!-- Project image placeholder (atas title) -->
+                        <div class="project-image-wrapper">
+                            <!-- Ganti src dengan gambar sebenar -->
+                            <img
+                                src="arip_ameran.jpg"
+                                alt="Preview of Arip Ameran Law Firm Website"
+                                class="project-image"
+                            />
+                        </div>
+
+                        <div class="project-header">
+                            <h3 class="project-title">
+                                Arip Ameran Law Firm Website
+                            </h3>
+                            <p class="project-type">
+                                Corporate Website | Legal Services
+                            </p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                A professional website for a law firm to present
+                                their services, lawyer profiles, and company
+                                background. Designed to look clean and
+                                trustworthy so visitors can quickly understand
+                                what the firm offers.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">Elementor</span>
+                                <span class="tech-badge">JetEngine</span>
+                                <span class="tech-badge">HTML/CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Se'antero Perfume -->
+                    <article class="project-card animate-on-scroll">
+                        <div class="project-image-wrapper">
+                            <img
+                                src="seantero_perfume.jpg"
+                                alt="Preview of Se'antero Perfume Website"
+                                class="project-image"
+                            />
+                        </div>
+
+                        <div class="project-header">
+                            <h3 class="project-title">
+                                Se’antero Perfume Website
+                            </h3>
+                            <p class="project-type">
+                                E-Commerce | Product Display
+                            </p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                A simple product showcase website for a perfume
+                                brand that highlights their collection, brand
+                                story, and agent recruitment. The layout focuses
+                                on visuals and makes it easy for customers and
+                                agents to contact them through WhatsApp.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">Elementor</span>
+                                <span class="tech-badge">
+                                    WhatsApp Integration
+                                </span>
+                                <span class="tech-badge">HTML/CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: MyFibre Store -->
+                    <article class="project-card animate-on-scroll">
+                        <div class="project-image-wrapper">
+                            <img
+                                src="myfibre_store.jpg"
+                                alt="Preview of MyFibre Store Website"
+                                class="project-image"
+                            />
+                        </div>
+
+                        <div class="project-header">
+                            <h3 class="project-title">
+                                MyFibre Store Website
+                            </h3>
+                            <p class="project-type">
+                                Service Provider | ISP Platform
+                            </p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                An improved version of an existing ISP service
+                                website. I helped update plan listings, forms,
+                                and agent access using custom post types, so the
+                                client can manage internet plans easily without
+                                touching code.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">JetEngine</span>
+                                <span class="tech-badge">Ultimate Member</span>
+                                <span class="tech-badge">Elementor</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Get In Touch</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Have a project in mind? Let’s work together to bring your
+                    ideas to life.
+                </p>
+
+                <div class="contact-content">
+                    <!-- Contact Info -->
+                    <div class="contact-info animate-on-scroll">
+                        <h3>Contact Information</h3>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <i class="ri-mail-line"></i>
+                            </span>
+                            <div>
+                                <strong>Email</strong>
+                                <p>
+                                    <a href="mailto:jrlangie1218@gmail.com">
+                                        jrlangie1218@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <i class="ri-phone-line"></i>
+                            </span>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>
+                                    <a href="tel:+601140153506">
+                                        +60 11-4015 3506
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">
+                                <i class="ri-map-pin-line"></i>
+                            </span>
+                            <div>
+                                <strong>Location</strong>
+                                <p>Samarahan, Sarawak</p>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="social-links">
+                            <h4>Connect With Me</h4>
+                            <div class="social-icons">
+                                <a
+                                    href="https://github.com/jrlangie"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub"
+                                >
+                                    <i
+                                        class="ri-github-fill social-icon"
+                                    ></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/juniorlangiefenninmore"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="LinkedIn"
+                                >
+                                    <i
+                                        class="ri-linkedin-box-fill social-icon"
+                                    ></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a
+                                    href="https://www.instagram.com/jnrlgie/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Instagram"
+                                >
+                                    <i
+                                        class="ri-instagram-line social-icon"
+                                    ></i>
+                                    <span>Instagram</span>
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/itsjuniorlangie.fenninmore"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Facebook"
+                                >
+                                    <i
+                                        class="ri-facebook-circle-fill social-icon"
+                                    ></i>
+                                    <span>Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form
+                        class="contact-form animate-on-scroll"
+                        id="contactForm"
+                        novalidate
+                    >
+                        <h3>Send Me a Message</h3>
+
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required />
+                            <span
+                                class="error-message"
+                                id="nameError"
+                            ></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email *</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                            />
+                            <span
+                                class="error-message"
+                                id="emailError"
+                            ></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="5"
+                                required
+                            ></textarea>
+                            <span
+                                class="error-message"
+                                id="messageError"
+                            ></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Send Message
+                        </button>
+
+                        <!-- Success Message (hidden by default) -->
+                        <div class="success-message" id="successMessage">
+                            <span class="success-icon">✓</span>
+                            <p>
+                                Thank you for your message! I’ll get back to you
+                                soon.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                &copy; <span id="currentYear"></span> Junior Langie. All rights
+                reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top"
+    >
+        <span>↑</span>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
